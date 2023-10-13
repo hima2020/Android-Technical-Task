@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0.1"
+        android:background="@color/convertedin_grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/fl_header"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:alpha="0.3"
+        android:background="@drawable/bg_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/fl_header"
+        app:layout_constraintEnd_toEndOf="@id/fl_header"
+        app:layout_constraintStart_toStartOf="@id/fl_header"
+        app:layout_constraintTop_toTopOf="@id/fl_header">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:rotation="180"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/tv_profile"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="Profile"-->
+        <!--            android:textColor="@color/black"-->
+        <!--            android:textSize="18sp"-->
+        <!--            app:layout_constraintBottom_toBottomOf="@id/iv_back"-->
+        <!--            app:layout_constraintStart_toEndOf="@id/iv_back"-->
+        <!--            app:layout_constraintTop_toTopOf="@id/iv_back" />-->
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginVertical="5dp"
+            android:src="@drawable/ic_avatar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_avatar"
+            tools:text="Ibrahim hany" />
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:alpha="0.8"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_user_name"
+            tools:text="Ibrahim hany" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!--    <View-->
+    <!--        android:id="@+id/view_devider"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="1dp"-->
+    <!--        android:layout_marginHorizontal="40dp"-->
+    <!--        android:alpha="0.5"-->
+    <!--        android:background="@color/convertedin_grey"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@id/tv_albums_title"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="@id/tv_albums_title" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/tv_albums_title"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:alpha="0.8"-->
+    <!--        android:background="@color/white"-->
+    <!--        android:paddingHorizontal="10dp"-->
+    <!--        android:text="Albums"-->
+    <!--        android:textColor="@color/black"-->
+    <!--        android:textSize="14sp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/fl_header" />-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_albums"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fl_header"
+        tools:listitem="@layout/item_album" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

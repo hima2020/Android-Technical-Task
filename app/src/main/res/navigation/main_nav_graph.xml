@@ -1,0 +1,49 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/splashFragment">
+
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="converted.in.convertedin.ui.splash.SplashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/actionSplashFragmentToUsersFragment"
+            app:destination="@id/usersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/usersFragment"
+        android:name="converted.in.convertedin.ui.users.presentation.view.UsersFragment"
+        tools:layout="@layout/fragment_users">
+        <action
+            android:id="@+id/actionUsersFragmentToAlbumsFragment"
+            app:destination="@id/albumsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/albumsFragment"
+        android:name="converted.in.convertedin.ui.albums.presentation.view.AlbumsFragment"
+        tools:layout="@layout/fragment_albums">
+        <argument
+            android:name="userData"
+            app:argType="string" />
+        <action
+            android:id="@+id/actionAlbumsFragmentToPhotosFragment"
+            app:destination="@id/photosFragment"
+
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/photosFragment"
+        android:name="converted.in.convertedin.ui.photos.presentation.view.PhotosFragment"
+        tools:layout="@layout/fragment_photos">
+
+        <argument
+            android:name="albumId"
+            app:argType="integer"
+            app:nullable="false" />
+    </fragment>
+</navigation>
